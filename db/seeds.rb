@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts 'Creating restaurants...'
+camparino = Restaurant.new(name: "Camparino", address: "Milano", category: "italian")
+camparino.save!
+
+fries = Restaurant.new(name: "Holländische Fritten", address: "Cologne", category: "belgian")
+fries.save!
+
+good_child = Restaurant.new(name: "Good Child", address: "Agnesviertel, Cologne", category: "french")
+good_child.save!
+
+vegan = Review.new(content: "Best vegan chocolate croissant", rating: 5)
+vegan.restaurant = good_child
+vegan.save!
+puts 'Finished!'
